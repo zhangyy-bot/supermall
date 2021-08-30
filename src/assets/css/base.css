@@ -1,0 +1,72 @@
+@import "./normalize.css";
+
+/*:root -> 获取根元素html*/
+/* --aa用于定义变量
+    var(--aa)使用变量
+    calc()使用变量 */
+:root {
+  /* 文字颜色 */
+  --color-text: #666;
+  /* 文字高亮时的颜色 */
+  --color-high-text: #ff5777;
+  /* 设置导航栏等的背景颜色 */
+  --color-tint: #ff8198;
+  /* 背景颜色 */
+  --color-background: #fff;
+  --font-size: 14px;
+  --line-height: 1.5;
+}
+
+/* 单冒号(:)用于CSS3伪类 双冒号(::)用于CSS3伪元素 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  user-select: none; /* 禁止用户鼠标在页面上选中文字/图片等 */
+  -webkit-tap-highlight-color: transparent; /* webkit是苹果浏览器引擎，tap点击，highlight背景高亮，color颜色，颜色用数值调节 */
+  background: var(--color-background);
+  color: var(--color-text);
+  /* rem vw/vh */
+  /* vw/vh是一个相对单位
+      vw：viewport width 视口宽度单位
+      vh： viewport height 视口高度单位 
+      1vw=1/100视口宽度
+		  1vh=1/100视口高度
+*/
+  width: 100vw;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* 清除浮动 */
+.clear-fix::after {
+  clear: both;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+/* 一上是使用after伪元素方法清除浮动 */
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
